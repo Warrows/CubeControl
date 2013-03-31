@@ -4,6 +4,8 @@ import java.util.logging.Logger;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
+import com.warrows.plugins.CubeControl.listeners.AntiArmorStealing;
+import com.warrows.plugins.CubeControl.listeners.AntiPvP;
 import com.warrows.plugins.CubeControl.listeners.BedProtector;
 import com.warrows.plugins.CubeControl.listeners.BlockProtector;
 /**
@@ -24,11 +26,9 @@ public class CubeControlPlugin extends JavaPlugin
 		log.info("CubeControl loading");
 
 		loadListeners();
-		
 
 		log.info("CubeControl enabled");
 	}
-
 
 	@Override
 	public void onDisable()
@@ -41,6 +41,10 @@ public class CubeControlPlugin extends JavaPlugin
 		getServer().getPluginManager().registerEvents(new BlockProtector(),
 				this);
 		getServer().getPluginManager().registerEvents(new BedProtector(),
+				this);
+		getServer().getPluginManager().registerEvents(new AntiPvP(),
+				this);
+		getServer().getPluginManager().registerEvents(new AntiArmorStealing(),
 				this);
 	}
 }
