@@ -1,0 +1,9 @@
+name: CubeControl
+main: com.warrows.plugins.CubeControl.CubeControlPlugin
+version: 1.0.0
+
+# Command Data
+commands:
+    cubecontrol:
+      aliases: [cc]
+      description: Distribute.
